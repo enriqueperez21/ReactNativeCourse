@@ -25,5 +25,6 @@ async function obtenerPokemon(nombrePokemon) {
       console.error(`Error al obtener datos del Pokémon: ${error.message}`);
     }
   }
-  
-  obtenerPokemon('pikachu');
+  console.log("Primera linea")
+  obtenerPokemon('charmander');
+  console.log("Segunda linea de ejecución")

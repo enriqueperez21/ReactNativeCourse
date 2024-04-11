@@ -1,0 +1,15 @@
+FlatList: 
+
+    contentContainerStyle={styles}
+    data={DATA} -> Array de datos
+    renderItem={({item}) => <Text style={{fontSize: 24}}>{item}</Text>} -> Componente para Renderizar
+    <renderItem item={data[i]}/>
+    //Componente que recibe item
+    <saludar nombre={"Enrique"}/>
+    function saludar({nombre}){
+        <Text>{nombre}</Text>
+    }
+    function mostrarProductos({item: nombreProducto}){
+        <Text style={{fontSize: 24}}>{nombreProducto}</Text>
+    }
+    keyExtractor={item => item.id} -> Obtener el key especifico por Item

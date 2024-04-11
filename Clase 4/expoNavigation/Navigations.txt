@@ -1,0 +1,10 @@
+Navigations:
+Conjunto de Pantallas
+Pantallas -> Componentes que ocupan todo el espacio
+Componentes -> Ocupan parte del espacio en pantalla
+
+Navegations:
+Stack -> Pila
+  'Apila las pantallas al momento de usarlas'
+Tab -> Divide las pantallas usando los botones de una barra de navegacion
+Drawer -> Divide las pantallas usando un menu lateral

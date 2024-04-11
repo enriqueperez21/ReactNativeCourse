@@ -1,0 +1,20 @@
+FlatList ->
+Permite mostrar una lista, usando un array de datos.
+[Array]
+a
+b
+c
+
+SectionList ->
+Permite mostrar secciones.
+[Objeto]
+Category: []
+Name Category : a , b ,c
+{
+    title: 'Main dishes',
+    data: ['Pizza', 'Burger', 'Risotto'],
+},
+{
+    title: 'Drinks',
+    data: ['Water', 'Coke', 'Beer'],
+  },

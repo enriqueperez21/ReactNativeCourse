@@ -2,11 +2,20 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export const AppContext = createContext()
 
+export const useApp = ()=>{
+    return useContext(AppContext)
+}
+
 export const AppProvider = ({children}) =>{
     const [userInfo, setUserInfo] = useState("Enrique")
     const [pokemon, setPokemon] = useState()
     const [userCar, setUserCar] = useState()
+    const [loggin, setLoggin] = useState(false)
 
+    const loginComplete = ()=>{
+        setUserInfo({name: "Enrique", email: "luis.perez@epn.edu.ec"})
+        setLoggin(true)
+    }
     const updateCar = (newData)=>{
         setUserCar({...userCar, newData})
     }
@@ -24,7 +33,7 @@ export const AppProvider = ({children}) =>{
     },[])
     
     return(
-        <AppContext.Provider value={{userInfo, pokemon, updateCar}}>
+        <AppContext.Provider value={{userInfo, pokemon, updateCar, loggin, loginComplete}}>
             {children}
         </AppContext.Provider>
     )

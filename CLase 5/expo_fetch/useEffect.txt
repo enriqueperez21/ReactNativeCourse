@@ -1,0 +1,21 @@
+useEffect(() =>{
+    //Cuerpo de función
+  },[])
+
+--useEffect es una ejecutable automatico según lo que necesitamos.
+
+--Cuando inicie o muestre una pantalla
+
+useEffect(() =>{
+    //Cuerpo de función
+  },[variable])
+
+--Cuando la variable cambia de valor, se va a ejecutar el useEffect
+
+useEffect(() =>{
+    //Cuerpo de función
+    return(Function Anular ejecución)
+  },[variable])
+
+//Permite anular lo que se está ejecutando, para evitar una gran cantidad de ejecuciones.
+

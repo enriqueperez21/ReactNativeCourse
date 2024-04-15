@@ -1,0 +1,4 @@
+Hooks:
+
+Context Api
+--Permite acceder a los datos en toda la aplicacion o donde nosotros queremos que se pueda

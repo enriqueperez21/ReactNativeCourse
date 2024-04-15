@@ -36,20 +36,6 @@ export const Navigations = ()=>{
   )
 }
 
-export const Home = ()=>{
-  const useAppContext =  useApp()
-  console.log(useAppContext)
-  const {userInfo} = useAppContext
-  return(
-    <View style={appStyle.container}>
-      <Text style={{fontSize: 32}}>Hola React Native, Enrique</Text>
-      <Text style={{fontSize: 32}}>Nombre de usuario: {userInfo.name}</Text>
-      <Text style={{fontSize: 32}}>Email: {userInfo.email}</Text>
-      <StatusBar style="auto" />
-    </View>
-  )
-}
-
 export const Login = ()=>{
   const useAppContext =  useApp()
   const {loginComplete} = useAppContext

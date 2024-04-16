@@ -1,15 +1,15 @@
 import { StatusBar, Text } from "react-native"
 import { ScreenDefault } from "../../components/ScreenDefault/ScreenDefault"
 import { useApp } from "../../context"
+import { MyText } from "../../components/Text/Text"
 
 export const Home = ()=>{
     const useAppContext =  useApp()
-    console.log(useAppContext)
     const {userInfo} = useAppContext
     return(
       <ScreenDefault>
-          <Text style={{fontSize: 32}}>Hola React Native, Enrique</Text>
-          <StatusBar style="auto" />
+          <MyText type={"normal"}>Hola React Native, {userInfo.name}</MyText>
+          <MyText type={"normal"}>Email, {userInfo.email}</MyText>
       </ScreenDefault>
     )
   }

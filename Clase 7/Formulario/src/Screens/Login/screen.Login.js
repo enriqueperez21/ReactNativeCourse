@@ -38,7 +38,7 @@ export const Login = ()=>{
             />
             <Button 
             title='Logearte'
-            onPress={()=>loginComplete()}
+            onPress={()=>loginComplete(userInfo)}
             />
           </View>
       </ScreenDefault>

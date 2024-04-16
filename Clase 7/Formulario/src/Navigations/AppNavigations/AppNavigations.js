@@ -26,7 +26,7 @@ export const UserNavigations = () =>{
     return(
         <Stack.Navigator>
             <Stack.Screen name="userInfo" component={UserInfoS} options={{ headerShown: false }}/>
-            <Stack.Screen name="pokeImages" component={UserImages} options={{ headerShown: false }}/>
+            <Stack.Screen name="DogImages" component={UserImages} options={{ headerShown: false }}/>
         </Stack.Navigator>
     )
 }

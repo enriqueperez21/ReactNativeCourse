@@ -1,19 +1,36 @@
-import { Image, StatusBar, Text } from "react-native"
+import { Button, Image, TextInput } from "react-native"
 import { ScreenDefault } from "../components/ScreenDefault/ScreenDefault"
 import { useApp } from "../context"
+import { useState } from "react"
+import axios from "axios"
 
 export const UserImages = ()=>{
     const useAppContext =  useApp()
-    console.log(useAppContext)
-    const {userInfo} = useAppContext
+    const [url, setUrl] = useState("")
+    const [name, setName] = useState("")
+    const getData = async(name) =>{
+      const response = await axios.get("https://dog.ceo/api/breed/"+name+"/images/random")
+      const data = response.data
+      const url = data.message
+      setUrl(url) 
+    }
     return(
       <ScreenDefault>
-          <Text style={{fontSize: 32}}>Imagen de muestra</Text>
+          <TextInput
+                style={{fontSize: 18, marginVertical: 20}}
+                value={name}
+                onChangeText={(text)=>setName(text)}
+                placeholder="User name"
+                keyboardType="default"
+            />
+            <Button 
+              title="Buscar"
+              onPress={()=>getData(name)}
+            />
           <Image 
             style={{width: 400, height: 400}}
-            source={{uri:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",}}
+            source={{uri:url,}}
           />
-          <StatusBar style="auto" />
       </ScreenDefault>
     )
   }

@@ -4,7 +4,6 @@ import { useApp } from "../context"
 
 export const UserInfoS = ({navigation})=>{
     const useAppContext =  useApp()
-    console.log(useAppContext)
     const {userInfo} = useAppContext
     return(
       <ScreenDefault>
@@ -13,7 +12,7 @@ export const UserInfoS = ({navigation})=>{
           <Text style={{fontSize: 32}}>Email: {userInfo.email}</Text>
           <Button 
             title="Ir a imagenes"
-            onPress={()=>navigation.navigate("pokeImages")}
+            onPress={()=>navigation.navigate("DogImages")}
           />
           <StatusBar style="auto" />
       </ScreenDefault>

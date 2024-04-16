@@ -7,33 +7,20 @@ export const useApp = ()=>{
 }
 
 export const AppProvider = ({children}) =>{
-    const [userInfo, setUserInfo] = useState("Enrique")
-    const [pokemon, setPokemon] = useState()
-    const [userCar, setUserCar] = useState()
+    const [userInfo, setUserInfo] = useState()
     const [loggin, setLoggin] = useState(false)
 
-    const loginComplete = ()=>{
-        setUserInfo({name: "Enrique", email: "luis.perez@epn.edu.ec"})
+    const loginComplete = (data)=>{
+        setUserInfo({...data})
         setLoggin(true)
     }
-    const updateCar = (newData)=>{
-        setUserCar({...userCar, newData})
-    }
 
-    const getPokemon =async(pokemonName)=>{
-        const uri = "https://pokeapi.co/api/v2/pokemon/"+pokemonName
-        const response1 = await fetch(uri)
-        const responseJson = await response1.json()
-        const pokemonType = responseJson.types[0].type.name
-        return pokemonType
-    }
     useEffect(()=>{
-        const pokemonType = getPokemon("pikachu")
-        setPokemon(pokemonType)
+        
     },[])
     
     return(
-        <AppContext.Provider value={{userInfo, pokemon, updateCar, loggin, loginComplete}}>
+        <AppContext.Provider value={{userInfo, loggin, loginComplete}}>
             {children}
         </AppContext.Provider>
     )
